@@ -4,13 +4,13 @@ pipeline{
         stage('checkout'){
             steps{
                 echo 'checkout stage'
-                checkout SCM
+                checkout scm
             }
         }
         stage('build'){
             steps{
                 echo 'Build stage'
-                sh 'mvn clean install'
+                sh 'mvn clean package'
             }
         }
         stage('test'){
