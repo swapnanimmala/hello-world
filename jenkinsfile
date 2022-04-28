@@ -17,15 +17,14 @@ pipeline{
             steps{
                 echo 'Test cases stage'
                 sh 'mvn test'
-                }
-                post{
+            }
+            post{
                 success{
                     echo 'Archiving artifacts now'
                     archiveArtifacts 'target/*.jar'
-                   
                 }
             }
-            }
         }
+          
     }
 }
