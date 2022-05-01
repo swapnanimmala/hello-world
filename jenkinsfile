@@ -26,19 +26,18 @@ pipeline{
             }
         }
     stages('CD'){
-      parallel{  
-        stage('staging'){
-            steps{
-                echo 'staging stage'
+        parallel{  
+            stage('staging'){
+                steps{
+                    echo 'staging stage'
+                }
+            }
+            stage('Production'){
+                steps{
+                    echo 'Production stage'
+                }
             }
         }
-    }
-        stage('Production'){
-            steps{
-                echo 'Production stage'
-            }
-        }
-      }
-    }
+     }
  }
     
